@@ -1,0 +1,41 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+
+  "projects": {
+    "mic-otp": {
+      "projectType": "library",
+      "root": "projects/mic-otp",
+      "sourceRoot": "projects/mic-otp/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/mic-otp/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/mic-otp/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/mic-otp/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/mic-otp/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

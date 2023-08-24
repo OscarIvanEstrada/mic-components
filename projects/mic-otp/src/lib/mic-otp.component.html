@@ -1,0 +1,27 @@
+<div class="container-fluid bg-body-tertiary d-block">
+
+  <div class="row justify-content-center">
+      <div class="col-12 col-md-6 col-lg-4" style="min-width: 500px;">
+          <div class="card bg-white mb-5 mt-5 border-0" style="box-shadow: 0 12px 15px rgba(0, 0, 0, 0.02);">
+              <div class="card-body p-5 text-center">
+                  {{data.lblTitle}}
+                  <div class="otp-field mb-4">
+                      <input type="text" maxlength="1" (input)="onInput($event, 1)" #digit1 class="otp-digit" />
+                      <input type="text" maxlength="1" (input)="onInput($event, 2)" #digit2 class="otp-digit" />
+                      <input type="text" maxlength="1" (input)="onInput($event, 3)" #digit3 class="otp-digit" />
+                      <input type="text" maxlength="1" (input)="onInput($event, 4)" #digit4 class="otp-digit" />
+                      <input type="text" maxlength="1" (input)="onInput($event, 5)" #digit5 class="otp-digit" />
+                      <input type="text" maxlength="1" (input)="onInput($event, 6)" #digit6 class="otp-digit" />
+                  </div>
+                  <button (click)="verifyOTP()" [disabled]="!isInputComplete" class="btn btn-primary mb-3">
+                      {{data.btnVerify}}
+                    </button>
+            
+                    <p class="resend text-muted mb-0">
+                      {{data.lblResend}} <a (click)="verifyOTP()" href="">{{data.btnResend}}</a>
+                    </p>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
