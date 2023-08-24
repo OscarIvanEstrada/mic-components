@@ -87,14 +87,6 @@ export class MicOtpComponent {
 
   verifyOTP() {
     const otp = this.otpDigits.join('');
-    console.log('Submitted OTP:', otp);
-
-    // Perform your OTP validation logic here
-    if (otp === '123456') {
-      console.log('OTP is valid.');
-    } else {
-      console.log('Invalid OTP.');
-    }
     this.verifyOTPEvent.emit(otp);
   }
 

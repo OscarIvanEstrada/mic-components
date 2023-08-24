@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "buildpackageotp": "cd dist/mic-otp && npm publish"
+    "buildpackageotp": "cd dist/mic-otp && npm version patch --force && npm publish"
   },
   "private": false,
   "dependencies": {

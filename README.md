@@ -8,6 +8,9 @@ ng generate library mic-otp
 
 ng build --project mic-otp
 
+npm run buildpackageotp
+
+
 cd dist/mic-otp
 npm publish
 
